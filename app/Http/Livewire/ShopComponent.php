@@ -5,14 +5,27 @@ namespace App\Http\Livewire;
 use App\Models\Product;
 use Livewire\Component;
 use Livewire\WithPagination;
+use Cart;
 
 
 class ShopComponent extends Component
 {
     use WithPagination;
+    public $pagesize = 12;
+
+    public function store($product_id,$product_name,$product_price){
+        Cart::add($product_id,$product_name,1,$product_price)->associate('\App\Models\Product');
+        session()->flash('success_message','Item added in cart');
+        return redirect('cart');
+    }
+
+    public function changePageSize($size){
+        $this->pagesize = $size;
+    }
+
     public function render()
     {
-        $products = Product::paginate(12);
+        $products = Product::paginate($this->pagesize);
         return view('livewire.shop-component',['products' => $products]);
     }
 }
