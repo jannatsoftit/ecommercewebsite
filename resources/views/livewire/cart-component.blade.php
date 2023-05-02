@@ -21,7 +21,7 @@
                             </div>
 
                             @endif
-                            @if(Cart::count() > 0)
+                            @if(Cart::instance('cart')->count() > 0)
 
 
                             <table class="table shopping-summery text-center clean">
@@ -37,7 +37,7 @@
                                 </thead>
                                 <tbody>
 
-                            @foreach (Cart::content() as $item)
+                            @foreach (Cart::instance('cart')->content() as $item)
 
                                     <tr>
                                         <td class="image product-thumbnail"><img src="{{ asset('assets/imgs/shop/product-')}}{{$item->model->id}}-2.jpg" alt="#"></td>
