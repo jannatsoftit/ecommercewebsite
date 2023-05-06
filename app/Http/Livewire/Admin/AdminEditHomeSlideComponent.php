@@ -2,14 +2,15 @@
 
 namespace App\Http\Livewire\Admin;
 
-use Livewire\Component;
 use App\Models\HomeSlider;
 use Carbon\Carbon;
+use Livewire\Component;
 use Livewire\WithFileUploads;
 
 class AdminEditHomeSlideComponent extends Component
 {
     use WithFileUploads;
+
     public $top_title;
     public $title;
     public $sub_title;
@@ -18,9 +19,10 @@ class AdminEditHomeSlideComponent extends Component
     public $status;
     public $image;
     public $slide_id;
-    public $newImage;
+    public $newimage;
 
-    public function mount($slide_id){
+    public function mount($slide_id)
+    {
         $slide = HomeSlider::find($slide_id);
         $this->top_title = $slide->top_title;
         $this->title = $slide->title;
@@ -29,7 +31,7 @@ class AdminEditHomeSlideComponent extends Component
         $this->link = $slide->link;
         $this->status = $slide->status;
         $this->image = $slide->image;
-        $this->slide_id = $slide->id;
+        $this->slider_id = $slide->id;
     }
 
     public function updateSlide()
@@ -40,7 +42,7 @@ class AdminEditHomeSlideComponent extends Component
             'sub_title' => 'required',
             'offer' => 'required',
             'link' => 'required',
-            'status' => 'required',
+            'status' => 'required'
         ]);
 
         $slide = HomeSlider::find($this->slide_id);
@@ -50,10 +52,10 @@ class AdminEditHomeSlideComponent extends Component
         $slide->offer = $this->offer;
         $slide->link = $this->link;
         $slide->status = $this->status;
-        if($this->newImage){
-            unlink('../assets/imgs/slider/'.$slide->image);
-            $imageName = Carbon::now()->timestamp.'.'.$this->newImage->extension();
-            $this->newImage->storeAs('slider',$imageName);
+        if($this->newimage){
+            unlink('assets/imgs/slider/'.$slide->image);
+            $imageName  = Carbon::now()->timestamp.'.'.$this->newimage->extension();
+            $this->newimage->storeAs('slider',$imageName);
             $slide->image = $imageName;
         }
 

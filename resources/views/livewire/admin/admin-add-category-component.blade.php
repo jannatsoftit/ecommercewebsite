@@ -45,10 +45,27 @@
                                     <p class="text-danger">{{$message}}</p>
                                     @enderror
                                 </div>
+
                                 <div class="mt-3 nt-3">
-                                    <label for="slug" class="form-label">Slug:</label>
-                                    <input type="text" name="slug" class="form-controll" placeholder="Enter caregory Slug" wire:model="slug" />
-                                    @error('slug')
+                                    <label for="image" class="form-label">Image</label>
+                                    <input type="file" class="form-controll" wire:model="image" />
+                                    @error('image')
+                                    <p class="text-danger">{{$message}}</p>
+                                    @enderror
+
+                                    @if($image)
+                                    <img src="{{$image->temporaryUrl()}}" width="120">
+                                    @endif
+
+                                </div>
+
+                                <div class="mt-3 nt-3">
+                                   <label for="is_popular" class="form-label">Popular</label>
+                                   <select class="form-control" name="is_popular" wire:model="is_popular">
+                                        <option value="0">No</option>
+                                        <option value="1">Yes</option>
+                                   </select>
+                                    @error('is_popular')
                                     <p class="text-danger">{{$message}}</p>
                                     @enderror
                                 </div>

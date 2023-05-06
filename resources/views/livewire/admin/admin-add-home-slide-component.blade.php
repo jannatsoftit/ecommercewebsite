@@ -40,14 +40,14 @@
                                 <form wire:submit.prevent="addSlide">
                                 <div class="mb-3 mt-3">
                                     <label class="form-label">Top Title</label>
-                                    <input type="text"  class="form-controll" placeholder="Enter Slide Top Title" wire:model="top_title" />
+                                    <input type="text"  class="form-control" placeholder="Enter Slide Top Title" wire:model="top_title" />
                                     @error('top_title')
                                     <p class="text-danger">{{$message}}</p>
                                     @enderror
                                 </div>
                                 <div class="mb-3 mt-3">
                                     <label class="form-label">Title</label>
-                                    <input type="text" class="form-controll" placeholder="Enter Slide title" wire:model="title" />
+                                    <input type="text" class="form-control" placeholder="Enter Slide title" wire:model="title" />
                                     @error('title')
                                     <p class="text-danger">{{$message}}</p>
                                     @enderror
@@ -55,7 +55,7 @@
 
                                 <div class="mb-3 mt-3">
                                     <label class="form-label">Sub Title</label>
-                                    <input type="text" class="form-controll" placeholder="Enter Slide Subtitle" wire:model="sub_title" />
+                                    <input type="text" class="form-control" placeholder="Enter Slide Subtitle" wire:model="sub_title" />
                                     @error('sub_title')
                                     <p class="text-danger">{{$message}}</p>
                                     @enderror
@@ -63,7 +63,7 @@
 
                                 <div class="mb-3 mt-3">
                                     <label class="form-label">Offer</label>
-                                    <input type="text" class="form-controll" placeholder="Enter Slide offer" wire:model="offer" />
+                                    <input type="text" class="form-control" placeholder="Enter Slide offer" wire:model="offer" />
                                     @error('offer')
                                     <p class="text-danger">{{$message}}</p>
                                     @enderror
@@ -71,7 +71,7 @@
 
                                 <div class="mb-3 mt-3">
                                     <label class="form-label">Link</label>
-                                    <input type="text" class="form-controll" placeholder="Enter Slide link" wire:model="link" />
+                                    <input type="text" class="form-control" placeholder="Enter Slide link" wire:model="link" />
                                     @error('link')
                                     <p class="text-danger">{{$message}}</p>
                                     @enderror

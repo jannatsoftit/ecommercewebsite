@@ -90,9 +90,9 @@
 
                                 <div class="mb-3 mt-3">
                                     <label class="form-label">Image</label>
-                                    <input type="file" class="form-control" wire:model="newImage  " />
-                                    @if($newImage)
-                                      <img src="{{$newImage->temporaryUrl()}}" width="100" />
+                                    <input type="file" class="form-control" wire:model="newimage" />
+                                    @if($newimage)
+                                      <img src="{{$newimage->temporaryUrl()}}" width="100" />
                                       @else
                                       <img src="{{asset('assets/imgs/slider')}}/{{$image}}" width="100" />
                                     @endif
@@ -100,7 +100,7 @@
                                     <p class="text-danger">{{$message}}</p>
                                     @enderror
                                 </div>
-                                <button type="submit" class="btn btn-primary float-end mt-5">Submit</button>
+                                <button type="submit" class="btn btn-primary float-end mt-5">Update</button>
                             </form>
                             </div>
                         </div>

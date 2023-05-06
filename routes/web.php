@@ -15,12 +15,14 @@ use App\Http\Livewire\Admin\AdminEditCategoryComponent;
 use App\Http\Livewire\Admin\AdminAddProductCpmonent;
 use App\Http\Livewire\Admin\AdminProductComponent;
 use App\Http\Livewire\Admin\AdminEditProductComponent;
-use App\Http\Livewire\Admin\AdminHomeSliderComponent;
-use App\Http\Livewire\Admin\AdminAddHomeSlideComponent;
-use App\Http\Livewire\Admin\AdminEditHomeSlideComponent;
+
 use App\Http\Livewire\CategoryComponent;
 use App\Http\Livewire\SearchComponent;
 use App\Http\Livewire\WishlistComponent;
+
+use App\Http\Livewire\Admin\AdminHomeSliderComponent;
+use App\Http\Livewire\Admin\AdminAddHomeSlideComponent;
+use App\Http\Livewire\Admin\AdminEditHomeSlideComponent;
 
 /*
 |--------------------------------------------------------------------------
@@ -64,6 +66,8 @@ Route::middleware(['auth','authadmin'])->group(function(){
     Route::get('/admin/products',AdminProductComponent::class)->name('admin.products');
     Route::get('/admin/product/add',AdminAddProductCpmonent::class)->name('admin.product.add');
     Route::get('/admin/product/edit/{product_id}',AdminEditProductComponent::class)->name('admin.product.edit');
+
+
     Route::get('/admin/slider',AdminHomeSliderComponent::class)->name('admin.home.slider');
     Route::get('/admin/slider/add',AdminAddHomeSlideComponent::class)->name('admin.home.slide.add');
     Route::get('/admin/slider/edit/{slide_id}',AdminEditHomeSlideComponent::class)->name('admin.home.slide.edit');
@@ -71,7 +75,7 @@ Route::middleware(['auth','authadmin'])->group(function(){
 
 
 // Route::get('/dashboard', function () {
-//     return view('dashboard');
+//     return view('dashboard'); 
 // })->middleware(['auth', 'verified'])->name('dashboard');
 
 

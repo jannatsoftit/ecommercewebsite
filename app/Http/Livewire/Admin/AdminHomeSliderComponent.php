@@ -2,8 +2,8 @@
 
 namespace App\Http\Livewire\Admin;
 
-use Livewire\Component;
 use App\Models\HomeSlider;
+use Livewire\Component;
 
 class AdminHomeSliderComponent extends Component
 {
@@ -14,7 +14,7 @@ class AdminHomeSliderComponent extends Component
     {
         $slide = HomeSlider::find($this->slide_id);
         unlink('assets/imgs/slider/'.$slide->image);
-        $slide->save();
+        $slide->delete();
         session()->flash('message','Slide has been deleted!');
     }
 

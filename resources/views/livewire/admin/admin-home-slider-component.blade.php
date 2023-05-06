@@ -53,12 +53,12 @@
                                     </thead>
                                     <tbody>
                                           @php
-                                              $id = 0;
+                                              $i  = 0;
                                           @endphp
                                         @foreach ($slides as $slide)
                                         <tr>
-                                            <td>{{++$id}}</td>
-                                            <td><img src="{{asset('assets/imgs/slider')}}/{{$slide->image}}" width="80" /></td>
+                                            <td>{{++$i}}</td>
+                                            <td><img src="{{ asset('assets/imgs/slider')}}/{{$slide->image}}" width="80" /></td>
                                             <td>{{$slide->top_title}}</td>
                                             <td>{{$slide->title}}</td>
                                             <td>{{$slide->sub_title}}</td>
